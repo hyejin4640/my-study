@@ -1,0 +1,12 @@
+폰트어썸 링크
+굵은글씨
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+font-family: 'Nuosu SIL', serif;
+보통글씨
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&family=Oswald:wght@200;500&display=swap');
+font-family: 'Oswald', sans-serif;
+
+구글 폰트
+ <link href="https://fonts.googleapis.com/
+    icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined"
+    rel="stylesheet">
