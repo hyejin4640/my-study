@@ -4,6 +4,7 @@
 body {
   width: 100%;
   font-weight: bold;
+  /* position: relative; */
 }
 #wrap {
   width: 100%;
@@ -28,14 +29,14 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-color: #fff;
+  color: #fff;
   border-radius: 10px;
 }
 .gnb .logo {
   font-size: 4.5rem;
   color: seagreen;
 }
-.gnb .logo:hover{
+.gnb .logo:hover {
   transform: scale(120%);
 }
 .gnb nav a {
@@ -50,7 +51,6 @@ color: #fff;
   background-color: rgb(18, 99, 53);
   color: #000;
   border-radius: 0.3rem;
-
 }
 
 /* 배너 */
@@ -72,8 +72,8 @@ color: #fff;
   animation: character_text;
   animation-duration: 1s;
 }
-.character{
-  width:500px ;
+.character {
+  width: 500px;
   height: 480px;
   display: block;
   border-radius: 50%;
@@ -88,7 +88,7 @@ color: #fff;
   position: relative;
   overflow: hidden;
 }
-.character::after{
+.character::after {
   content: "";
   width: 500px;
   height: 480px;
@@ -98,11 +98,11 @@ color: #fff;
   left: 0;
   transition: 1s;
 }
-.character:hover:after{
+.character:hover:after {
   top: 0;
   left: 0;
 }
-.character img{
+.character img {
   z-index: 1;
 }
 .benner .character_text h1 {
@@ -113,13 +113,17 @@ color: #fff;
   font-size: 3rem;
   padding-bottom: 2%;
 }
+.benner .character_text:hover {
+  color: rgb(18, 99, 53);
+}
 
 .scroll {
   background-color: #000;
   color: rgb(238, 237, 237);
   /* border: 8px solid seagreen; */
   border: 0.2rem solid transparent;
-  background-image: linear-gradient(#000,#000), linear-gradient(to bottom,rgb(12, 92, 46),seagreen,#000);
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(to bottom, rgb(12, 92, 46), seagreen, #000);
   background-origin: border-box;
   background-clip: content-box, border-box;
   font-size: 2.7rem;
@@ -132,29 +136,28 @@ color: #fff;
   transform: scale(115%);
 }
 @keyframes bounce {
-  0%{
+  0% {
     opacity: 0;
     left: -500px;
     transform: rotate(0);
   }
-  100%{
+  100% {
     left: 0;
     transform: rotate(360deg);
   }
 }
 @keyframes character_text {
-  0%{
+  0% {
     opacity: 0;
     right: -800px;
   }
-  100%{
+  100% {
     opacity: 1;
     right: 0;
-
   }
 }
 /******************** main ***************** */
-/* skill *********** */
+/* skill *************** */
 
 .skill {
   width: 70%;
@@ -162,7 +165,7 @@ color: #fff;
   padding: 8rem;
   display: flex;
   align-items: center;
-  background-color:rgb(15, 82, 44);
+  background-color: rgb(15, 82, 44);
   border-radius: 5rem;
 }
 .skill_detail {
@@ -181,24 +184,23 @@ color: #fff;
   font-size: 2.6rem;
   color: #fff;
 }
-.skill_text p{
+.skill_text p {
   color: #000;
 }
 
 .skill_icon {
-  color:#fff;
+  color: #fff;
   padding-top: 3rem;
   line-height: 4rem;
   font-size: 2.6rem;
   font-family: "Sunflower", sans-serif;
 }
 
-
 .full_slide > img {
   border: 1px solid #000;
 }
 
-/* work************/
+/* work***************/
 input[name="tab"] {
   display: none;
 }
@@ -208,13 +210,13 @@ input[name="tab"] {
   width: 5rem;
   height: 2rem;
   border-radius: 0.5rem;
-  background-color: rgb(146, 146, 146);
+  background-color: linen;
   margin: 10px 5px;
 }
-input[id="tab1"]:checked ~ .work_btn label[for="tab1"],
-input[id="tab2"]:checked ~ .work_btn label[for="tab2"],
-input[id="tab3"]:checked ~ .work_btn label[for="tab3"] {
-  background-color: rgb(45, 45, 170);
+input[id="tab1"]:checked ~ .work_detail .work_btn label[for="tab1"],
+input[id="tab2"]:checked ~ .work_detail .work_btn label[for="tab2"],
+input[id="tab3"]:checked ~ .work_detail .work_btn label[for="tab3"] {
+  background-color: rgb(154, 103, 236);
 }
 .work {
   background-color: rgb(45, 45, 170);
@@ -251,12 +253,13 @@ input[id="tab3"]:checked ~ .work_btn label[for="tab3"] {
   left: 0;
   transition: 0.5s;
 }
-.work .work_slide .work_fullslide img{
+.work .work_slide .work_fullslide img {
   border-radius: 5rem;
 }
-.work_detail .work_btn{
-  width:100%;
-  margin: 0 auto;
+.work_detail .work_btn {
+  /* width:100%;
+  margin: 0 auto; */
+  text-align: center;
 }
 
 input[id="tab2"]:checked ~ .work_detail .work_slide .work_fullslide {
@@ -272,7 +275,7 @@ input[id="tab3"]:checked ~ .work_detail .work_slide .work_fullslide {
 /* portfolio*************** */
 .portfolio {
   width: 80%;
-  margin: 10rem auto;
+  margin: 10rem auto 0;
 }
 .portfolio_name {
   width: 100%;
@@ -300,19 +303,18 @@ input[id="tab3"]:checked ~ .work_detail .work_slide .work_fullslide {
   justify-content: center;
   align-items: center;
 }
-.portfolio_detail .portfolio_left div:nth-child(1){
+.portfolio_detail .portfolio_left div:nth-child(1) {
   background-color: tomato;
 }
-.portfolio_detail .portfolio_left div:nth-child(2){
+.portfolio_detail .portfolio_left div:nth-child(2) {
   background-color: yellowgreen;
 }
-.portfolio_detail .portfolio_left div:nth-child(3){
+.portfolio_detail .portfolio_left div:nth-child(3) {
   background-color: skyblue;
 }
 .portfolio_detail .portfolio_right {
   background-color: #fff;
   width: 50%;
-
 }
 .portfolio_detail .portfolio_right a {
   display: block;
@@ -321,5 +323,33 @@ input[id="tab3"]:checked ~ .work_detail .work_slide .work_fullslide {
   justify-content: center;
   align-items: center;
 }
+main .up {
+  font-size: 50px;
+  color: #fff;
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+}
 
 /******************** footer ****************/
+footer {
+  width: 70%;
+
+  padding: 8rem;
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 0 auto;
+}
+.footer_text {
+  font-size: 2rem;
+  color: #fff;
+}
+.footer_icon {
+  text-align: center;
+}
+.footer_icon p {
+  margin: 2rem 0;
+}
+.footer_icon .fa-brands {
+  display: inline-block;
+}
