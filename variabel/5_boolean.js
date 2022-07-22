@@ -27,4 +27,6 @@ console.log(!!1);
 console.log(!!-1);    
 console.log(!!'text');    
 console.log(!!{});    
-console.log(!!Infinity);  
+console.log(!!Infinity); 
+console.log(!!' ');
+ 
