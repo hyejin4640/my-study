@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<title>나이계산하기</title>
+</head>
+<body>
+  <button onclick="ageCalc()">나이계산</button>
+  <div id = "calc" class="result">당신의 나이는 = </div>
+  <script>
+  //   const CURRENT_YEAR = 2022;
+  //   let birthYear = prompt('태어난연도를 입력하세요 : YYYY');
+  //   // propmpt는 내장함수 
+  //   // 내장함수는 보통 앞에 갖고오고싶은 요소를쓰고.내장함수() 이런식인데, prpmprt는 window.prompot() 이다
+  //  // 즉 생략을 하게되면 가장 최상위인 window 객체에서 찾게된다
+  //   // dom : 트리형태구조 , 최상위 : window
+  //   // bom : 브라우저오브젝트모델 , 최상위 : window
+  //   // document.write() : 이것도 원래는 window.document.write()
+  //   console.log(birthYear);
+  //   let age = (CURRENT_YEAR - birthYear )+1;
+  //   // console.log("당신의 현재나이는 = " +age);
+  //   //  디버그할때 사용함(개발자가 값을 알기위해 )
+  //   //consol은 개발자를 위한 함수(데이터확인등등)
+    // let tagDiv = document.querySelector(".result");
+  //   // document에 의해서 선택자로 갖고온다  
+  //   // 데이터를갖고위한구문 : querty 
+    // console.log("tagDiv");
+  //   tagDiv.innerText = "당신의 현재나이는 = " +age+"입니다";
+  
+    function ageCalc(){
+      const CURRENT_YEAR = 2022;
+      let birthYear = prompt('태어난연도를 입력하세요 : YYYY');
+      let age = (CURRENT_YEAR - birthYear )+1;
+      // 객체의 정보를 불러올땐 const로 변수를 선언한후 가져온다,정보가 바뀌면안되니까
+      // 요소값을 가져오는 태그명 elemDiv , $Div , tag Div 등등 사용목적을 알수있는 변수명으로 지어야함
+      const tagDiv = document.querySelector("#calc");
+      tagDiv.innerText = "당신의 현재나이는 = " +age+"입니다";
+      console.log(tagDiv);
+      // let tagDiv = null;
+      // tagDiv = document.getElementsByClassName("result");
+      // //  클래스,id입력시 특수문자를 입력x
+      // tagDiv.innerText = "당신의 현재나이는 = " +age+"입니다";
+      // console.log(tagDiv);
+    }
+  </script>
+  <!-- 노드는 브라우저에서 읽지못함?? -->
+  <!-- ageCalc : 주소값을 갖고있는사애
+       ageCalc(): 즉시실행을 시켜라 -->
+</body>
+</html>

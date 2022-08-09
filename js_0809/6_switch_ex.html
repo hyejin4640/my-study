@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부서의 호실 알림</title>
+  <style>
+    body{
+      background-color: blue;
+      width: 100%;
+      height: 100vh;
+      color: #Fff;
+      text-align: center;
+    }
+    div{
+      margin-top: 300px;
+      font-size: 2rem;
+      font-weight: bolder;
+      text-shadow: 1px 2px 1px #000;
+    }
+    div strong{
+      font-size: 4rem;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="notice"><p>마케팅 세션은<strong>201호</strong>에서 진행됩니다.</p></div>
+  <script >
+    let session = prompt("관심섹션을 입력하세요 1:마케팅 2번:개발 3번:디자인");
+    let textContents = null;
+    // session : 1,2,3,나머지
+    switch (session) {
+      case "1" :
+        textContents="<p>마케팅 세션은<strong>201호</strong>에서 진행됩니다.</p>";
+        break;
+      case "2" :
+        textContents="<p>개발 세션은<strong>202호</strong>에서 진행됩니다.</p>";
+        break;
+      case "3" :
+        textContents="<p>디자인 세션은<strong>203호</strong>에서 진행됩니다.</p>";
+        break;
+      default:
+        textContents="<p>잘못입력하셧읍니다</p>";
+        break;
+    }
+    //const 상수안에 innerHTML 속성으로 태그의 글씨를 바꾸는건 상수의 값을 바꾸는것과 다른건가요????
+    const elemDiv = document.querySelector(".notice");
+    elemDiv.innerHTML = textContents;
+    // document.querySelector("div").innerHTML = textContents;
+  </script>
+</body>
+</html>

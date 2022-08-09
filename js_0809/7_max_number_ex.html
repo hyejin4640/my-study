@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제일큰수 출력하기</title>
+</head>
+<body>
+  <h1></h1>
+  <div class="answer">제일 큰수 : </div>
+<script>
+  let user = parseInt(prompt('숫자를 입력해주세요'));
+  let user2 = parseInt(prompt('다음 숫자를 입력해주세요'));
+  let user3 = parseInt(prompt('세번째 숫자를 입력해주세요'));
+
+const user_text = document.querySelector("h1");
+user_text.innerText = `사용자가 입력한숫자 : ${user},${user2},${user3}`;
+
+  // if (user > user2 && user > user3){
+  //   document.write(`큰수는 ${user} 입니다`);
+  // }else if(user2 > user && user2 > user3){
+  //   document.write(`큰수는 ${user2} 입니다`);
+  // }else if(user3 > user2 && user3 > user){
+  //   document.write(`큰수는 ${user3} 입니다`);
+  // }
+
+  const result = document.querySelector(".answer");
+  // if (user > user2 && user > user3){
+  //   result.innerText=`제일큰수는${user} 입니다.`;
+  // }else if(user2 > user && user2 > user3){
+  //   result.innerText=`제일큰수는${user2} 입니다.`;
+  // }else if(user3 > user2 && user3 > user){
+  //   result.innerText=`제일큰수는${user3} 입니다.`;
+  // }
+  if(user > user2){
+    if(user > user3){
+      document.write(`가장큰수는 ${user}입니다`);
+    }else{
+      document.write(`가장큰수는 ${user3}입니다`);
+    }
+  }else{
+    if(user2>user3){
+      document.write(`가장큰수는 ${user2}입니다`);
+    }else{
+      document.write(`가장큰수는 ${user3}입니다`);
+    }
+  }
+
+// 반복문 비교
+
+// let max = 0;
+//   for(let i =0; i<3; i++){
+//     let num =parseInt(prompt('정수입력'))
+//     if (max < num){
+//       max=num;
+//     }
+//   }
+</script>
+</body>
+</html>
