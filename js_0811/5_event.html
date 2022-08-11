@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 처리t</title>
+</head>
+<body>
+   <!-- 1. html inline 선택자로 이벤트 등록 -->
+  <button onclick="add()">1. 덧셈 계산</button>
+  <button onclick="alert(100-50)">1-1. 뺄샘 계산</button>
+  <!-- 2. property등록, addEventListener 등록 -->
+  <button class="btn1" >2 곱셈계산  답: 200 (스크립트에서 이벤트 실행)</button>
+  <button class="btn2" >3 곱셈 계산 답 : 810000(스크립트에서 이벤트 실행)</button>
+
+  <script>
+
+    
+    // 🧡1. html inline 선택자로 이벤트 등록
+    let add = () => {
+      let sum = 10+20;
+      alert(sum);
+    }
+    // 🧡2. property ( 속성)로 이벤트 등록
+    // 해당요소의 property에 함수를 지정한다. 이때 함수는 event를 매개변수로 가져간다.
+    // event라는 매개변수를 가져가는 이유는 지정한 property에 지정한 함수를 발생시켰을때의 정보들을 모아놓은것을 "객체화" 시켜서 event라는 매개변수에 정보를 받게한다
+    // 즉 , 사용자가 event를 사용했을때의 정보를 갖고올수있다. (ex: 이벤트를발생했을때의 마우스의위치, 부모태그의 정보...등등)
+    const elemBtn1 = document.querySelector(".btn1");
+    console.log(elemBtn1);  //콘솔창에서 지정한 요소 속성 확인하기
+    
+    elemBtn1.onclick = (event)=>{
+      let mul =10*20;
+      alert( mul);
+    }
+    // 🧡3.addEventListener 로 이벤트 등록 
+    // addEventListener에 함수를 등록하는데 수행할 이벤트와 해당 함수를 등록한다
+    const elemBtn2 = document.querySelector('.btn2');
+    elemBtn2.addEventListener('click', (event)=>{   
+      let mul = 900 * 900;
+      alert(mul);
+      console.dir(elemBtn2);  //콘솔창에서 요소 속성 확인하기
+    });
+  </script>
+</body>
+</html>
+
+
+
+
