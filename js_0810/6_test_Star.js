@@ -1,4 +1,3 @@
-
 // test
 // star6 라는 변수안에 값을 공백 & 별을 넣어주어야함
 // 일단 총5줄 => 총for문
@@ -15,18 +14,16 @@
  * 
  */
 
-
-
-let star2 ="";
-for(let i = 1; i<6; i++){
-  for(let j=1; j < 6-i; j++){
-    star2+=" ";
+let star2 = "";
+for (let i = 1; i < 6; i++) {
+  for (let j = 1; j < 6 - i; j++) {
+    star2 += " ";
   }
-  for(let k =1; k<i+1; k++){
-    star2+="*";
+  for (let k = 1; k < i + 1; k++) {
+    star2 += "*";
   }
   console.log(star2);
-  star2="";
+  star2 = "";
 }
 
 /**
@@ -40,38 +37,34 @@ for(let i = 1; i<6; i++){
  * 
  */
 
-
-
-let star="";
-for(let i =1; i<=5; i++){
-  for(let j = 1; j<=i-1; j++ ){
-    star+=" ";
+let star = "";
+for (let i = 1; i <= 5; i++) {
+  for (let j = 1; j <= i - 1; j++) {
+    star += " ";
   }
-  for(let k =1; k<=6-i; k++){
-    star+="*";
+  for (let k = 1; k <= 6 - i; k++) {
+    star += "*";
   }
   console.log(star);
-  star="";
+  star = "";
 }
-
 
 /**
  * 
- *    *
- *   ***
- *  ******
- * ********
+ *     *
+ *    ***
+ *   ******
+ *  ********
 
 */
-let star3="";
-for(let i=0; i<4; i++){
-  for(let j=3; j>i; j-- ){
-    star3+=" ";
+let star3 = "";
+for (let i = 0; i < 4; i++) {
+  for (let j = 3; j > i; j--) {
+    star3 += " ";
   }
-  for(let k =0; k < (i*2)+1; k++){
-    star3+="*";
+  for (let k = 0; k < i * 2 + 1; k++) {
+    star3 += "*";
   }
   console.log(star3);
-  star3="";
+  star3 = "";
 }
-
