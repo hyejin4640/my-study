@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>배열 객체 활용</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      #wrapper{
+        width: 50%;
+        margin: 0 auto;
+      }
+      h1{
+        margin: 20px;
+        text-align: center;
+      }
+      #wrapper > form{
+      display: flex;
+      /* justify-content: space-around; */
+      padding: 40px;
+      background-color: rgb(45, 119, 230);
+      height: 50px;
+      }
+      #wrapper form > #item{
+        width:72%;
+        padding-left: 10px;
+        border: none;
+      }
+      #wrapper form #add{
+        width: 15%;
+        border: none;
+        margin-left: 20px;
+      }
+      #wrapper > ul{
+        list-style: none;
+        padding: 10px 20px;
+      }
+      #wrapper > ul > li{
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>배열 리스트 목록</h1>
+      <form onsubmit="return false;">
+        <input type="text" id="item" />
+        <button id="add">추가</button>
+      </form>
+      <ul id="item_list"></ul>
+    </div>
+    <script src="./2_ array_list.js"></script>
+  </body>
+</html>

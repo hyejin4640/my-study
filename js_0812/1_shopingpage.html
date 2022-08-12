@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>쇼핑몰이미지 리스트</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px;
+      }
+      #wrap {
+        display: flex;
+        width: 700px;
+        margin: 0 auto;
+      }
+      li {
+        list-style: none;
+      }
+      #prod-pic {
+        width: 300px;
+      }
+      #prod-text {
+        width: 300px;
+        margin-left: 100px;
+      }
+      #prod-text li {
+        margin-top: 20px;
+      }
+      #prod-text ul {
+        display: block;
+        width: 100%;
+      }
+      .big-wrap img {
+        display: block;
+        width: 100%;
+      }
+      .big-wrap {
+        width: 300px;
+        height: 300px;
+        position: relative;
+      }
+      .big-wrap button {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        border: none;
+        cursor: pointer;
+        transform: translateY(-50%);
+      }
+      .big-wrap button:nth-child(1) {
+        left: 0;
+      }
+      .big-wrap button:nth-child(2) {
+        right: 0;
+      }
+      .small-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .small-wrap img {
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>쇼핑몰 아이템 상세 보기</h1>
+    <div id="wrap">
+      <div id="prod-pic">
+        <div class="big-wrap">
+          <img src="../images/image-01.png" alt="big-image" />
+          <div class="big-btn">
+            <button class="btn1">〈</button>
+            <button class="btn2">〉</button>
+          </div>
+          <div class="small-wrap">
+            <img src="../images/image-01.png" alt="이미지1" />
+            <img src="../images/image-02.png" alt="이미지2" />
+            <img src="../images/image-03.png" alt="이미지3" />
+          </div>
+        </div>
+      </div>
+      <div id="prod-text">
+        <ul>
+          <li><span>상품명</span> : 상품명 이름 기재</li>
+          <li><span>판매가</span> : 9,000원</li>
+          <li><span>배송비</span> : 3,000원</li>
+          <li>(50,000원 이상 구매 시 무료)</li>
+          <li><span>적립금</span> : 180원(2%)</li>
+          <li><span>제조일자</span> : 2022.08.12</li>
+          <li><button>장바구니 담기</button></li>
+        </ul>
+      </div>
+    </div>
+    <script src="./1_shopingpage.js"></script>
+  </body>
+</html>
