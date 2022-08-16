@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> 계산기 </title>
+  <style>
+    #wrap {
+      margin: 0 auto;
+      text-align: center;
+      line-height: 100px;
+      width: 600PX;
+      height: 600PX;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 100px);
+      grid-template-areas: "user user user user"
+        "Ac Ac Ac divi"
+        "seven eight nine mul"
+        "four five six minus"
+        "one two three pluse"
+        "zero zero dot result";
+
+      /* grid의 가로와 세로를 설정하면 태그의 순서대로 그설정한 위치와 넓이만큼을 스스로 자동적으로 차지한다
+                           그래서 특별히 1칸보다 더 설정하고싶으면 그태그에 1/3 까지 차지할거아 이런식으로 적거나
+                           위애ㅔ areas 템플릿으로 사용해도된다 */
+    }
+
+    #wrap div,
+    #wrap span {
+      font-size: 30px;
+      color: #fff;
+      border: 1px solid #333;
+    }
+
+    #wrap input {
+      font-size: 30px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    #wrap div {
+      background-color: #666;
+    }
+
+    #wrap span {
+      background-color: orangered;
+    }
+
+    #user {
+      grid-area: user;
+    }
+
+    .Ac {
+      grid-area: Ac;
+    }
+
+    .divi {
+      grid-area: divi;
+    }
+
+    .zero {
+      grid-area: zero;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <input type="text" id="user">
+    <div class="Ac">AC</div>
+    <span class="divi">/</span>
+    <div class="seven">7</div>
+    <div class="eight">8</div>
+    <div class="nine">9</div>
+    <span class="mul">*</span>
+    <div class="four">4</div>
+    <div class="five">5</div>
+    <div class="six">6</div>
+    <span class="minus">-</span>
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <span class="pluse">+</span>
+    <div class="zero">0</div>
+    <div class="dot">.</div>
+    <span class="result">=</span>
+  </div>
+</body>
+
+</html>
