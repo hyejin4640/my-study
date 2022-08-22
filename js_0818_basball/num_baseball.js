@@ -1,8 +1,8 @@
 
     'use strict';
     //변수선언
-    const arrRandom = '3146';
-    // let arrRandom = '';   //랜덤한 4자리의 숫자를 단는 문자열
+    // const arrRandom = '3146';
+    let arrRandom = '';   //랜덤한 4자리의 숫자를 단는 문자열
 
     //객체 선택-----------------------------------------------------------
     const tagForm = document.querySelector('form');
@@ -68,4 +68,4 @@
     }
 
   
-    // init();
+    analysisNumber();
