@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트 핸들러 2</title>
+  </head>
+  <body>
+    <div id="outer">
+      outer
+      <div id="inner1">inner1</div>
+      <div id="inner2">inner2</div>
+    </div>
+    <script>
+      let tagOuter = document.querySelector('#outer');
+      let tagInner2 = document.querySelector('#inner2');
+
+      tagOuter.addEventListener('click' , (e)=>{
+        console.log('outer bubbleing');
+      },false);
+      /*
+      event flow : 트리형태의 구조에서 이벤트 타깃을 찾아서 이벤트를  실행하는데 같은 이벤트 속성을 가진 요소들이 부모요소로
+      존재한다면 이벤트 캡쳐와 버블중에 하나의 의해 같이 실행된다.
+      
+        false : 타깃 상태와 버블링 단계만 실행
+        true : 캡쳐링만 실행
+      */
+      tagOuter.addEventListener('click' , (e)=>{
+        console.log('outer capturing');
+      },true);
+
+      tagInner2.addEventListener('click' , (e)=>{
+        console.log('inner2-1');
+        e.stopPropagation();   //이벤트의 전파를 취소합니다.
+      },false);
+
+      tagInner2.addEventListener('click',(e)=>{
+        console.log( 'inner2-2');
+      },false)
+
+    </script>
+  </body>
+</html>

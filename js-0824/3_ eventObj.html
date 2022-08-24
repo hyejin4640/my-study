@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>마우스 좌표</title>
+    <style>
+      #box{
+        background-color: green;
+        height: 200px;
+        width: 200px;
+        margin-top: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <div id="result"></div>
+    <script>
+      const $Box = document.querySelector('#box');
+      const $result = document.querySelector('#result');
+      const handlerClick = (event) => {
+        $result.innerHTML = `<div>screen X,Y = ${event.screenX} , ${event.screenY}</div>`;  //모니터
+        $result.innerHTML += `<div>client X,Y = ${event.clientX} , ${event.clientY}</div>`; //브라우저(지금보여지는창 100vh)
+        $result.innerHTML += `<div>page X,Y = ${event.pageX} , ${event.pageY}</div>`;       //html문서
+        $result.innerHTML += `<div>offset X,Y = ${event.offsetX} , ${event.offsetY}</div>`; // 요소
+        
+      };
+      // document.onclick = handlerClick; 
+      $Box.addEventListener('click',handlerClick);
+
+      //  지역변수명 : _value
+      // 태그를 가져오는 변수명 : $Div , tagDiv 
+// console.log(event.clientX, event.clientY);   // 브라우저기준
+// console.log(event.pageX, event.pageY);       // document 기준(문서, 브라우저와 차이점은 스클롤이 내려가면 y 값은 달라진다)
+// console.log(event.screenX, event.screenY);   // 모니터기준
+// console.log(event.offsetX, event.offsetY);   //  요소기준
+    </script>
+  </body>
+</html>
+
+

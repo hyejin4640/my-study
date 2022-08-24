@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트 핸들러</title>
+  </head>
+  <body>
+    <!-- /**
+ * 이벤트 : 브라우저가 처리해야 할 특정 사건이 발생하면 감지해서 이벤트 발생
+ * click , mouseenter , mouseleave ,,,,
+ * 요소의 property로 등록 , addEventListener 로 등록 
+ *  -->
+    <button class="add">Click Me!</button>
+    <button class="remove">이벤트 삭제</button>
+    <script>
+
+      
+      const tagAdd = document.querySelector(".add");
+      const tagRemove = document.querySelector(".remove");
+
+      const handlerClick =(event)=>{
+        console.log(event);
+        
+      }
+      const handlerClick2 =(e)=>{
+        console.log( 'CLick')
+      }
+      const handlerRemove = ()=>{
+        tagAdd.removeEventListener('click' , handlerClick );
+        // tagAdd.onclick = null;
+        /* 대입연산자로 대입한값은 false 값 , true값으로 넣어 구분해 식을 구성한다*/
+      }
+      /* Property로 이벤트를 등록하면 : 이벤트는 1개만 등록가능
+         대입연산자로 저장을 시키는개념이라서 */
+      
+         //  tagAdd.onclick = handlerClick;
+      //  tagAdd.onclick = handlerClick2;
+
+      
+      /*addEventListener로 이벤트등록하면 : 여러개등록가능 순서대로 실행
+      addEventListener는 q구조 라 먼저들어간게 먼저 나오는 구조 
+      대입연산자로 저장하는 개념아니다 */
+      
+      tagAdd.addEventListener('click' ,  handlerClick );
+      tagAdd.addEventListener('click' ,  handlerClick2 );
+      tagRemove.addEventListener('click',handlerRemove );
+      // // 익명함수로 등록된 함수는 삭제를 할수없음 
+      // tagRemove.addEventListener('click',()=>{
+      //   console.log( ' click 3');
+      // } );
+
+    </script>
+  </body>
+</html>

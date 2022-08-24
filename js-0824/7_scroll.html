@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>스크롤 이동</title>
+    <style>
+      button{
+        background-color: red;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: bolder;
+        border: none;
+        outline: none;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        padding: 20px;
+        z-index: 10;
+        display: none;
+      }
+      h1{
+        background-color: #000;
+        color: #fff;
+        padding: 30px;
+      }
+      div{
+        background-color: lightblue;
+        padding: 30px 30px 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="topBtn">TOP</button>
+    <h1>Scroll Down</h1>
+    <div>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+      doloremque dicta iusto nulla ipsam reiciendis quod harum tempore! Aut
+      consectetur quam recusandae sed voluptates corrupti enim assumenda illum
+      tempora reprehenderit?
+    </div>
+    <script>
+      const topBtn = document.querySelector('#topBtn');
+      const handlerScroll =()=>{
+        // console.log( window.pageYOffset );  //scroll-top : Window 안의 Document가 수직 방향으로 스크롤된 거리를 픽셀 단위로 나타낸 부동소숫점 수
+        // console.log( window.innerHeight);  // 100vh (브라우저창을 줄이면 당연히 값이 달리짐)
+        if ( window.pageYOffset > 99 ){  //스크롤이 한번내려갔을때의 거리를 픽셀로 반환한 값 100 이니까 100보다 이하인숫자보다 크면 실행해라  딱 한번 스크롤을 내렸을때 실행해야하니까
+          topBtn.style.display = 'block';
+        }else{
+          topBtn.style.display = 'none';
+        }
+      }
+      const handlerClick = ()=>{
+        // document.documentElement.scrollTop =0;
+        scroll({top:0,left:0, behavior:'smooth'});  
+      }
+      const getScrollTop =()=>{
+        if( window.pageYOffset !== undefined){
+          return window.pageYOffset;
+        }else{
+          return document.documentElement.scrollTop || document.body.scrollTop;
+        }
+      }
+      window.addEventListener('scroll',handlerScroll);
+      topBtn.addEventListener('click', handlerClick)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스 드래그 (마우스 이벤트 종류)</title>
+    <style>
+      #box {
+        width: 50px;
+        height: 50px;
+        background-color: yellowgreen;
+        border: 1px solid orange;
+        cursor: pointer;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      const $Box = document.querySelector("#box");
+
+      const handlerMouseMove = (e) => {
+        $Box.style.top = e.clientY + "px";
+        $Box.style.left = e.clientX + "px";
+      };
+
+      const handlerMouseDown = (e) => {
+        $Box.addEventListener('mousemove' , handlerMouseMove );
+        $Box.style.transform = `translate(-${e.offsetX}px ,-${e.offsetY}px)`;
+      };
+
+      const handlerMouseUp =(e)=>{
+        document.addEventListener('mousemove' , handlerMouseMove );
+      };
+      const handlerContextmenu =(e)=>{
+        console.log( 'mouse right click');
+        e.preventDefault();
+        return false;
+        // 오른쪽 마우스클릭해서 소스보기 금지할수있는방법
+        
+      }
+      $Box.addEventListener("mousedown", handlerMouseDown);
+      document.addEventListener('mouseup', handlerMouseUp);
+      document.addEventListener('contextmenu' , handlerContextmenu );
+
+      // window.addEventListener("mousemove", handlerMouseMove);
+      // $Box.addEventListener('mousemove', handlerMouseMove );
+    </script>
+  </body>
+</html>
