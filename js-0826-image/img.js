@@ -9,20 +9,37 @@ const $circle = document.querySelector(".circle");
 const $play = document.querySelector(".play-btn > .play");
 const $stop = document.querySelector(".play-btn > .stop");
 const $bg = document.querySelector(".bg");
-let $dot;
 const SLIDE_LEN = $Imgs.length;
 const IMG_WIDTH = $Imgs[0].clientWidth;
 let currentIdx = 0;
 const MOVE_TIME = 300;
 let IntervalId;
 let check = false;
-
+let dot_list;
 // *************************************************************************************
 
 
+const dotSlide=( i )=>{
+  $slideList.style.transition= MOVE_TIME+'ms';
+  $slideList.style.transform = `translateX(-${IMG_WIDTH * ( i +1 )}px)`;
+  currentIdx = i;
+}
 
-const dotClassAdd =()=>{
-  
+const dotAddRemoveClass =(obj )=>{
+  const tgRemove = document.querySelector('.dot-active');
+  tgRemove.classList.remove('dot-active');
+  for(let i=0; i<dot_list.length; i++){
+    if( dot_list[i] === obj ){
+     dot_list[i].classList.add('dot-active');
+     dotSlide( i );
+    }
+  }
+ 
+}
+
+const dotTatget = (e)=>{
+  let obj = e.target;
+  dotAddRemoveClass( obj );
 }
 
 const createDot =()=>{
@@ -30,8 +47,12 @@ const createDot =()=>{
     const dot = document.createElement('p');
     $circle.appendChild(dot);
     dot.classList.add('dot');
-    dot.addEventListener('click' , dotClassAdd );
+    dot.addEventListener('click' ,dotTatget  );
+    
   })
+ dot_list = document.querySelectorAll('.dot');
+dot_list[0].classList.add('dot-active');
+
 }
 
 const prevClick =()=>{
@@ -47,7 +68,9 @@ const prevClick =()=>{
    },MOVE_TIME);
    currentIdx = SLIDE_LEN-1;
   }
+ dotAddRemoveClass( dot_list[currentIdx] );
 }
+
 const nextClick =()=>{
   currentIdx++;
   if( currentIdx <= SLIDE_LEN ){
@@ -61,6 +84,7 @@ const nextClick =()=>{
     },MOVE_TIME)
     currentIdx = 0;
   }
+  dotAddRemoveClass( dot_list[currentIdx] );
 }
 
 
@@ -77,9 +101,30 @@ const init =()=>{
   cloneImage();
 }
 
+const playImgSlide =()=>{
+  IntervalId = setInterval(() => {
+    nextClick();
+  }, 2000);
+}
+const stopImgSlide=()=>{
+  clearInterval( IntervalId);
+}
+
+const changeBGColor =()=>{
+  if ( check){
+    document.querySelector('body').style.backgroundColor = "#ffffff";
+    check = false;
+  }else{
+    document.querySelector('body').style.backgroundColor = "#000000";
+    check= true;
+  }
+}
 // *************************************************************************************
 
 $prevButton.addEventListener('click', prevClick);
 $nextButton.addEventListener('click', nextClick);
+$play.addEventListener('click', playImgSlide );
+$stop.addEventListener('click', stopImgSlide );
 
+$bg.addEventListener('click', changeBGColor );
 init();
