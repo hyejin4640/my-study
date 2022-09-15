@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>스크롤 예제</title>
+    <style>
+      body {
+        height: 1000px;
+        background-color: yellowgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        color: #fff;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        transition: 1s;
+      }
+      #box.zoomin{
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fixed">0</div>
+    <div id="box"></div>
+    <script>
+      // 얼마나 스크롤이 되었는지를 픽셀 단위로 반환
+      // 스크롤 이벤트를 발생
+      const tagFixed = document.querySelector('#fixed');
+      const tagBox = document.querySelector('#box');
+      const handlerScroll =()=>{
+        // console.log( window.pageYOffset );  //스크롤바의 top 이위치한값
+        // tagFixed.textContent = window.scrollY || window.pageYOffset; 
+        // tagFixed.textContent = tagBox.offsetTop;  // 요소가 움직이지 않게 때문에 바뀌지않는다 근데 스크롤을 내릴수록 타이틀창과 가까워질대
+        //그값을 알아야 요소가 어느정도 보일대 이벤트를 실행할지 정할수있으니까
+        tagFixed.textContent = tagBox.getBoundingClientRect().top; // 요소가 보이는 브라우정영역에 어디에 위치에있는지 값을 얻는다(0 을넘어가면 브라우저의 화면영역을 넘어섰을때 나오는 값)
+        let box_offsetY = tagBox.getBoundingClientRect().top; 
+        if( box_offsetY < 10){
+          tagBox.classList.add('zoomin');
+        }else{
+          tagBox.classList.remove('zoomin');
+        }
+        console.log( box_offsetY);
+        
+      }
+      window.addEventListener('scroll',handlerScroll ); // scroll 영역은 document 에선 알수없음 window객체에서 이벤트를 등록해야함
+      
+    </script>
+  </body>
+</html>

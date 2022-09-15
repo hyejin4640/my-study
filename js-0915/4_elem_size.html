@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>요소의 사이즈와 스크롤</title>
+  <style>
+    #exam{
+      width: 300px;
+      height: 200px;
+      border: 25px solid blue;
+      padding: 20px;
+      overflow: auto;
+     position: absolute;
+     left: 180px;
+     top: 100px;
+      }
+  </style>
+
+</head>
+<body>
+<div id="exam">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam expedita aliquam in error id esse, cum blanditiis ducimus alias pariatur! At velit dicta quisquam fugit neque inventore illo tempora?
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam expedita aliquam in error id esse, cum blanditiis ducimus alias pariatur! At velit dicta quisquam fugit neque inventore illo tempora?
+  dicta quisquam fugit neque inventore illo tempora?
+</div>
+  <script>
+    const tagExam = document.querySelector('#exam');
+    console.log( `clientwidth: ${tagExam.clientWidth}`);  // 330 (20+290+20)padding + 스크롤바제외컨텐츠영역 + padding
+    console.log( `clientwidth: ${tagExam.clientHeight}`); // 240 (20+200+20) padding + 지정height값 + padding
+    console.log( `offsetwidth: ${tagExam.offsetWidth}`); // 390 (25+20+300+20+25) boder + padding + 지정width값(컨텐츠+스크롤바) +padding + border 
+    console.log( `offsetwidth: ${tagExam.offsetHeight}`); // 290 (25+20+300+20+25)
+    console.log( `offsetTop: ${tagExam.offsetTop}`); // 100 
+    console.log( `offsetTop: ${tagExam.offsetLeft}`); // 180
+    console.log( `scrollbar width : ${tagExam.offsetWidth - tagExam.clientWidth}`); //스크롤바width값 구하기 60
+    
+    // 컨텐츠 영역끝부터 boder 영역끝까지 (border) : client Left,Top, Bottom , right
+    // boder끝난여역부터 다음 요소전까지 :offset  Left,Top, Bottom , right
+    /* window.innerWidth (스크롤바를 제외한영역(?)) , windowHeight , window.outerWidth,window.outerHeight  (윈도우창전체 타이틀포함)  */ 
+    // inner : body영역만(타이틀,즐겨찾기빼고) , outer : 윈도우창 전체(즐겨찾기,타이틀까지 포함)
+    /* scrollWidth , scrollHeight  */  // 스크롤되서 안보인 전체 페이지의 영역까지
+    
+  </script>
+</body>
+</html>
