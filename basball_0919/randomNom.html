@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>타이머 랜덤숫자 맞추기</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+      }
+      h1 {
+        padding-left: 60%;
+        font-size: 3rem;
+      }
+      .wrap {
+        display: flex;
+        /* flex-direction: column; */
+        width: 80%;
+        height: 80%;
+        margin: 100px auto;
+        align-items: center;
+      }
+      .card {
+        display: grid;
+        margin-right: 100px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card p {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightskyblue;
+        font-size: 2rem;
+      }
+      .result {
+        display: grid;
+        width: 600px;
+        height: 150px;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .result p {
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <!-- <h1>타이머 랜덤 숫자 맞추기 </h1> -->
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <!-- <div class="result">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </div> -->
+
+    <script src="./tandomNum.js"></script>
+  </body>
+</html>

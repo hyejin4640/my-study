@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>랜덤숫자맞추기게임</title>
+    <style>
+      body {
+        background-color: coral;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h1{
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+        padding: 20px;
+
+      }
+      .wrap {
+        width: 500px;
+        height: 600px;
+      }
+      .quest,
+      .user {
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      input {
+        border: none;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        font-size: 3rem;
+        text-align: center;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        background-color: greenyellow;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>⚾랜덤 숫자 맞추기 게임⚾</h1>
+    <div class="wrap">
+      <div class="quest">
+        <input readonly type="text" value="?" />
+        <input readonly type="text" value="?" />
+        <input readonly type="text" value="?"/>
+        <button type="button" class="start">게임시작</button>
+      </div>
+      <div class="user">
+        <input type="text"   maxlength='1'   />
+        <input type="text"   maxlength='1'  />
+        <input type="text"   maxlength='1'  />
+        <button type="button" class="input-btn">입력</button>
+      </div>
+      <div class="history">
+        <!-- strike = 0, ball=0, out=0 <br> -->
+      </div>
+    </div>
+    
+    <script src="./ball.js"></script>
+  </body>
+</html>
