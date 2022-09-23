@@ -98,7 +98,12 @@ main section .charge_wrap {
   text-align: center;
   margin-top: 2rem;
 }
-/* slide_show */
+
+
+/* slide_show ****/
+
+
+
 .slide_show {
   height: 448px;
   width: 1090px;
@@ -129,12 +134,13 @@ main section .charge_wrap {
   text-align: center;
   margin-bottom: 1rem;
 }
-.slide_btn label {
+.slide_btn label{
   display: inline-block;
   width: 30px;
   height: 10px;
   background-color: #b2b3b4;
 }
+
 .slide_btn label[for=slide3],
 .slide_btn label[for=slide4],
 .slide_btn label[for=slide5]{
@@ -153,6 +159,8 @@ input[id="slide1"]:checked ~ .slide_btn label[for="slide1"],
 input[id="slide2"]:checked ~ .slide_btn label[for="slide2"] {
   background-color: #1a6dff;
 }
+
+
 .customer_button {
   margin: 0 auto;
   width: 284px;
@@ -361,7 +369,7 @@ footer {
   /* background-image: url(../image/footer_L.svg);
   background-size: cover;
   background-origin: border-box; */
-  background: linear-gradient(45deg, #f3f5f0 50%, #2850d3 50%);
+  background:  #2850d3;
 }
 footer .graph {
   position: absolute;
@@ -394,3 +402,25 @@ footer .graph_button {
   margin-top: 4rem;
 }
 
+
+.custom-shape-divider-top-1663833159 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1663833159 svg {
+  position: relative;
+  display: block;
+  width: calc(210% + 1.3px);
+  height: 500px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1663833159 .shape-fill {
+  fill: #FFFFFF;
+}

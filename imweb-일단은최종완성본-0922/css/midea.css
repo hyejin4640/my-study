@@ -67,6 +67,12 @@ input[id="slide5"]:checked ~ .slide_show .full_slide {
   top: 0;
   left: -400%;
 }
+input[id="slide3"]:checked ~ .slide_btn label[for=slide3],
+input[id="slide4"]:checked ~ .slide_btn label[for=slide4],
+input[id="slide5"]:checked ~ .slide_btn label[for=slide5]
+{
+  background-color: #1a6dff;
+}
 /* ************** */
 main section .explain_wrap {
   display: flex;
@@ -121,5 +127,10 @@ margin-bottom: 30rem;
   font-size: 1.6rem;
   line-height: 3rem;
 }
-
+.charge_squre {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rem;
+}
 }
