@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/*** menu style***/
+html{
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;  
+  /* 가로스크롤이 안생기게 처리할때 body에 overflow-x 로설정 */
+  
+}
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: rgba(255,255,255,0.6);  /* 투명값 **우주인디자인에서 보락색배경에 적용해보기!!! */
+  /* display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav > a{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  height: 100%;
+  box-sizing: border-box;
+}
+nav > a.active{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #fff;
+  background-color: rgb(0, 0, 0,0.6);
+}
+/***  section  ***/
+section{
+  width: 100vw;  /* vw,vh 단위로 사용하면 %사용할때의 약간의 여백이없게 딱맞춤 */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+}
+#sec-1{
+  background-color: orange;
+}
+#sec-2{
+  background-color: green;
+}
+#sec-3{
+  background-color: palevioletred;
+}
+#sec-4{
+  background-color: blue;
+}

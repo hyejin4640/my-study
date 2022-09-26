@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+
+body {
+  height: 1000vh;
+  background-image: url(../Solar_System-3Dscroll/img/bg-space.png);
+  background-attachment: fixed;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 10px;
+  z-index: 10;
+}
+
+.pro-bar {
+  width: 0;
+  /* 선택값/전체값 x100(기준값) */
+  /*기준량을 100으로 할 때의 비율을 말하는 것으로 백분율이라고 부릅니다.*/
+  /* (선택값 / 전체값) x 전체값을 다른 숫자로바꿀값 => 선택값이 기준값의 어디에 차지하는지구할수있다
+  */
+  height: 100%;
+  background-color: crimson;
+}
+
+/* *********************************************************************************** */
+nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50px;
+  z-index: 11;
+}
+
+nav li {
+  padding: 20px;
+  font-size: 2rem;
+  box-sizing: border-box;
+}
+
+li.active {
+  background-color: #fff;
+}
+
+/* *********************************************************************************** */
+.stage {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: coral; */
+  perspective: 1000px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-750vw);
+  transform-style: preserve-3d;
+}
+
+section {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.left {
+  width: 1500vw;
+  /* background-color: darkorchid; */
+  transform: rotateY(90deg) translateZ(-750vw);
+}
+
+.right {
+  width: 1500vw;
+  /* background-color: darkgreen; */
+  transform: rotateY(90deg) translateZ(-650vw);
+}
+
+.front {
+  width: 100vw;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+
+}
+
+.sec1 {
+  background-image: url(../Solar_System-3Dscroll/img/01-sun.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec2 {
+  background-image: url(../Solar_System-3Dscroll/img/02-susung.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec3 {
+  background-image: url(../Solar_System-3Dscroll/img/03-venus.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec4 {
+  background-image: url(../Solar_System-3Dscroll/img/04-earth.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec5 {
+  background-image: url(../Solar_System-3Dscroll/img/01-sun.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec6 {
+  background-image: url(../Solar_System-3Dscroll/img/02-susung.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec7 {
+  background-image: url(../Solar_System-3Dscroll/img/03-venus.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
+
+.sec8 {
+  background-image: url(../Solar_System-3Dscroll/img/04-earth.png);
+  /* background-position: ; */
+  background-size: contain;
+  background-position: center;
+}
