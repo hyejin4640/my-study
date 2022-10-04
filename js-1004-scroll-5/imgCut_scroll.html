@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지cut-cut-cut 재생</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <style>
+      body {
+        height: 500vh;
+      }
+      .sample {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <img class="sample" src="./image/seq_door/Green_(1).jpg" alt="imageScroll-1">
+    <script>
+      const MAX = 150;   /* 전체이미지개수 */
+      const videoImages =[];
+      const tagImg = document.querySelector('img');
+      // 함수정의 ------------------------------------------------------------------------------//
+      const loadImages =()=>{ 
+        for(let i=1; i<=MAX; i++){
+          let imgElem  = new Image();  /* new 이미지객체 */
+          imgElem.src = `./image/seq_door/Green_(${i}).jpg`;
+          videoImages.push(imgElem);    /* 생성한이미지요소를 배열에 저장 */
+        }
+        
+      }
+
+
+      // const drawFrame =()=>{
+      //   const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight );
+      //   let currentFrame = Math.floor(progress * (MAX-1)); /* 배열의 인덱스값으로.... */
+      //     tagImg.src = videoImages[currentFrame].src;  /* 배열에 저장된이미지에 src를사용 */  
+      //     window.requestAnimationFrame(drawFrame );
+      // }
+
+
+      const handlerScroll =()=>{
+        
+        setInterval(() => {
+
+          // 밖에서 사용하는것과 의 차이 정리하기!!!!!!
+          const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight );
+          let currentFrame = Math.floor(progress * (MAX-1)); 
+          tagImg.src = videoImages[currentFrame].src;  
+          console.log( currentFrame );
+        }, 16);
+
+
+        // const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight );
+        // let currentFrame = Math.floor(progress * (MAX-1));  /* 배열의 인덱스값으로.... */
+        // window.requestAnimationFrame( ()=>{
+        //   /* 기본값 : 1초당 60번을 호출
+        //   setinterval을 사용하면 수동으로 우리가 1000/60을 설정해서 사용해야함 */
+        //   tagImg.src = videoImages[currentFrame].src;  /* 배열에 저장된이미지에 src를사용 */  
+        // } );
+
+        
+        // window.requestAnimationFrame( drawFrame );
+      // drawFrame();
+      }
+
+
+      const init =()=>{
+        loadImages();
+        window.addEventListener('scroll',handlerScroll);
+        
+      }
+
+      window.addEventListener('load',init);
+    </script>
+  </body>
+</html>

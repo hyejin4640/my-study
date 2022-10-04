@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <title>캔버스를 이용한 이미지 스크롤링</title>
+    <style>
+      body{
+        height: 500vh;
+      }
+      .sample{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      /* html 폰트기반 ex: color 는 폰트컬러
+    2d에 이미지 효과 브라우저가 이영역은 그림의 영역이구나를 미리알수있다.(width와 height값을 미리설정한다.) */
+    </style>
+  </head>
+  <body>
+    <canvas class="sample" width="1920" height="1080"></canvas>
+    <script>
+      const tagCanvas = document.querySelector('.sample');
+      const MAX = 117;
+      const videoImges =[];
+      const context = tagCanvas.getContext('2d');   /* 도화지설정개념 (바탕) */
+
+
+      const loadImages =()=>{
+        for(let i=0; i<MAX; i++){
+          let imgElem = new Image;
+          imgElem.src = `./image/seq_mac/${i}.jpg`;
+        videoImges.push(imgElem);
+        }
+        videoImges[0].onload =()=>{
+        context.drawImage(videoImges[0],0,0);
+        }
+      }
+      
+
+      const drawFrame =()=>{
+        const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight );
+        let currentFrame = Math.floor(progress * (MAX-1));
+        context.drawImage(videoImges[currentFrame],0,0);
+        window.requestAnimationFrame(drawFrame);
+      }
+
+      
+       /* 도화지를 설정하는 개념 */
+      const init =()=>{
+        loadImages();
+        drawFrame();
+      }
+      window.addEventListener('load',init);
+    </script>
+  </body>
+</html>

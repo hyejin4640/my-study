@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비디오_mp4_재생</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    body{
+      height: 500vh;
+    }
+    .sample{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <video class="sample" src="./image/Green.mp4" muted controls></video>
+
+  <script>
+    const tagVideo = document.querySelector('.sample');
+
+    const handlerScroll =()=>{
+      const progress = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight );
+      tagVideo.currentTime = tagVideo.duration * progress;  /*duration : 비디오재생의 최종시간  */
+      
+    }
+    
+    const init =()=>{
+      console.log('초기화완료');
+      window.addEventListener('scroll',handlerScroll );
+      
+    }
+    // window.addEventListener('load',init)         /* load : html문서가 다읽혀질지면 실행하는속성(이미지나비디오가 다불러졌는지는 확인 x) */
+    tagVideo.addEventListener('loadeddata',init);  /* "loadeddata" : mp4파일이나 이미지들을 많이불러와서 다로드가되면 실행되야할때 사용하는 속성 */
+  </script>
+</body>
+</html>
