@@ -16,9 +16,9 @@ const setCurrentScene = () => {
 };
 
 
-const calc_values = (values , ratio)=>{
-  let calc=0;
-  calc = ratio *(values[1]-values[0])+values[0];
+const calc_values = (values, ratio) => {
+  let calc = 0;
+  calc = ratio * (values[1] - values[0]) + values[0];
   return calc;
 }
 
@@ -32,10 +32,10 @@ const sectionAniPlay = (prevHeight) => {
   const values = sceneInfo[currentScene].values;
   switch (currentScene) {
     case 0: //section-0
-      if( scrollRatio <= 0.2){
-        tagObjs.msgA.style.opacity = calc_values(values.msgA_opacity_in , scrollRatio );
-      }else{
-        tagObjs.msgA.style.opcity = calc_values(values.msgA_opacity_out, scrollRatio );
+      if (scrollRatio <= 0.2) {
+        tagObjs.msgA.style.opacity = calc_values(values.msgA_opacity_in, scrollRatio);
+      } else {
+        tagObjs.msgA.style.opcity = calc_values(values.msgA_opacity_out, scrollRatio);
       }
       break;
     case 1: //section-1
@@ -52,7 +52,7 @@ const sectionAniPlay = (prevHeight) => {
 
 //스크롤이 발생될때 현재 보여지는 section을 가르키는 idx 값을 가져오도록 함.
 const handlerScroll = () => {
-  const yOffset = window.pageYOffset || window.scrollY;
+  yOffset = window.pageYOffset || window.scrollY;
   let prevHeight = 0;
   for (let i = 0; i < currentScene; i++) {
     prevHeight += sceneInfo[i].scrollHeight;
@@ -65,7 +65,7 @@ const handlerScroll = () => {
   }
   // console.log( currentScene);
   document.body.setAttribute("id", `show-section-${currentScene}`);
-  sectionAniPlay( prevHeight );
+  sectionAniPlay(prevHeight);
 };
 
 
