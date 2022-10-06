@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+
+/* .container{
+  width: 80%;
+   margin: 0 auto;
+} */
+html{
+  font-size: 14px;   /* rem: 최상위기준 , em:부모기준 */
+  /* 최상위기준이 14px이되었으니 rem을 사용할경우 14px이 기준이됨 */
+}
+
+
+body{
+  letter-spacing: -0.05rem;   /* 글씨작안 */
+  height: 500vh;
+  overflow-x: hidden ;    /* 가로축에 스크롤이 생길경우를 대비해  */
+}
+
+/******** nav *************************************************************/
+
+
+.global-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  padding: 1rem;
+}
+.local-nav{
+  position: absolute;
+  top: 46px;
+  left: 0;
+  border-bottom:  1px solid #ddd;
+  width: 100%;
+  padding: 1rem;
+}
+.local-nav.local-nav-fixed{
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.global-nav-link,
+.local-nav-link{
+  display: flex;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}  
+
+
+.global-nav-link{
+  justify-content: space-between;
+}
+.local-nav-link > a.local-name{
+  margin-right:auto;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+.local-nav-link > a:not(.local-name){
+ margin-left: 2rem;
+ font-size: 0.8rem;
+}
+
+/*** section style **************************************************/
+section{
+  padding-top: 50vh;
+  border: 1px solid red;
+}
+
+#scroll-section-0 > h1{
+  position: relative;
+  top: -10vh;
+  font-size: 4rem;
+  text-align: center;
+}
+
+#scroll-section-1 > p{
+  max-width:1000px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  color: #888;
+}
+
+#scroll-section-1 > p > strong{
+  float: left;
+  color: #222;
+  font-size: 3rem;
+  margin-right: 0.3em;
+}
+
+#scroll-section-2 .b{
+  top: 10vh;
+  left: 40%;
+}
+
+#scroll-section-2 .c{
+  top: 20vh;
+  left: 60%;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  background: linear-gradient( 45deg, black, white );
+  font-size: 2rem;
+}
+
+/*** common font style *******************************************/
+.main-msg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4em;   /* 부모기준 */
+  font-size: 2.5rem;
+  top: 35vh;
+  text-align: center;
+  font-weight: bolder;
+  opacity: 0; 
+}
+
+.main-msg small{
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.desc-msg{
+  width: 50%;
+}
+.desc-msg > .line{
+width: 2px;
+height: 100px;
+background-color: #222;
+}
+
+.mid-msg{
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #888;
+  padding: 0 1rem;
+}
+
+.mid-msg > strong{
+  display: block;
+  color: #222;
+  font-weight: bold;
+}
+
+.canvas-desc{
+  max-width: 1000px;
+  margin:auto;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.sticky-msg{
+  /* 안보였다가 고정된위치에 보여지는 클래스  */
+  display: none;
+  position: fixed;
+  width: 100%;
+  left: 0; /* 현재위치 */
+}
+
+#show-section-0 #scroll-section-0 .sticky-msg,
+#show-section-1 #scroll-section-1 .sticky-msg,
+#show-section-2 #scroll-section-2 .sticky-msg,
+#show-section-3 #scroll-section-3 .sticky-msg{
+  display: block;
+}
+
+/*** 반응형 ********************************************************/
+
+@media all and (min-width:1024px) {
+  #scroll-section-0 > h1{
+    font-size: 10vw;
+  }
+  .main-msg{
+    font-size: 4vw;
+  }
+  .mid-msg{
+    font-size: 4rem;
+  }
+  .canvas-desc{
+    font-size: 2.5rem;
+  }
+  #scroll-section-1 > p{
+    font-size: 2.5rem;
+  }
+  #scroll-section-1 > p > strong{
+    font-size: 4rem;
+  }
+}
