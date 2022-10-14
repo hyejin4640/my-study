@@ -7,8 +7,8 @@ function fryEgg(egg) {
 }
 
 function getChicken() {
-  return Promise.reject(new Error('치킨을 가지고 올 수 없음!'));
-  // return Promise.resolve(`🌳 => 🐓`);
+  // return Promise.reject(new Error('치킨을 가지고 올 수 없음!'));
+  return Promise.resolve(`🌳 => 🐓`);
 }
 
 getChicken()

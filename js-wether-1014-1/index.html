@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/theme.css" />
+    <title>모멘텀</title>
+  </head>
+  <body>
+    <button class="theme" type="button">toggle theme</button>
+
+    <div id="wrap">
+      <header>
+        <h1 class="time"></h1>
+        <p class="login-name hidden">hello</p>
+        <form id="loginForm">
+          <input type="text" placeholder="로그인 이름 입력" required />
+          <!-- required는 입력을해야지만 실행되도록하는 설정 -->
+          <button>Log-in</button>
+        </form>
+      </header>
+
+      <main>
+        <section id="todo">
+        <form id="todoForm">
+          <input type="text" placeholder="할일을 입력하세요!" required />
+        </form>
+        <ul class="todoList">
+          <!-- <li><span>입력받은값</span><button>X</button></li> -->
+        </ul>
+      </section>
+      </main>
+
+      <footer>
+        <div class="quote">
+          <button>next</button>
+          <span class="quote_text">명언</span>
+          <span class="quote_author">작가</span>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/theme.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/quippery.js"></script>
+    <script src="./js/todolist.js"></script>
+  </body>
+</html>
