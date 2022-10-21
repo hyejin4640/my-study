@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>무한 스크롤 구현</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul > li {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        background-color: skyblue;
+        padding: 100px;
+      }
+      li:nth-child(2n) {
+        background-color: rgb(179, 111, 242);
+      }
+      div{
+        width: 300px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      main{
+        height: 300px;
+        border: 2px solid #000;
+      }
+      p{
+        height: 20px;
+        background-color: #fff;
+       border-radius: 20px 20px 0 0 ;
+      }
+      footer{
+        height: 20px;
+        background-color: #fff;
+        border-radius: 0 0 20px 20px;
+      }
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div>
+          <p></p>
+          <main>
+           <video src="./애플 사이트 클론 코딩 - Chrome 2022-10-20 14-54-50.mp4"></video>
+          </main>
+          <footer></footer>
+        </div>
+      </li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <script>
+      /*
+      const tagUl = document.querySelector('ul');
+      let liCount = tagUl.children.length;  // 얼만큼 늘어날지 모르니까 let
+      let elemLi;
+
+      const handlerScroll =(e)=>{
+      if( window.innerHeight + window.scrollY >= document.body.offsetHeight){
+        // li를 추가
+        elemLi = document.createElement('li');
+        elemLi.textContent = ++liCount;
+        tagUl.appendChild(elemLi);
+      }
+      }
+      window.addEventListener('scroll' , handlerScroll ); */
+
+      // 인터섹션옵저버 : 지금상황에서 예를들면) 스크롤이되는 순간마다 확인하는게아니라 마지막li의위치가되면 실행해라
+
+      // const value = new intersectionObserver( callback , option );
+      // value.observe('감시요소');
+
+      const tagUl = document.querySelector("ul");
+      let elemLi = tagUl.querySelector("li:last-child");
+      let liCount = tagUl.children.length;
+
+      // 1.인터렉션 옵저버 생성
+      const io = new IntersectionObserver(
+        (entry) => {
+          // 현재 보여지는 target
+          // const target = entry[0].target;
+          if ( entry[0].isIntersecting) {
+            // target이 화면에 보이면 
+            // 이전 감시대상을 취소
+            io.unobserve(elemLi);
+            // 새로운 li add
+            elemLi = document.createElement("li");
+            elemLi.textContent = ++liCount;
+            tagUl.appendChild(elemLi);
+            // 감시대상 등록
+            io.observe(elemLi);
+          }
+        },
+        {
+          // li가 반정도 보였을때
+          threshold: 0.5, // 다보이면 1
+        }
+      );
+      io.observe(elemLi);
+    </script>
+  </body>
+</html>
