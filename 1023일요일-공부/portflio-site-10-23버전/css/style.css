@@ -119,10 +119,6 @@ nav {
 
 }
 
-.character>img {
-  width: 420px;
-  height: 400px;
-}
 
 @keyframes floating {
   50% {
@@ -164,9 +160,9 @@ nav {
 }
 
 /* *******main ******************** */
-main {
+/* main {
   margin-top: 10rem;
-}
+} */
 
 .txt-flow {
   width: 100vw;
@@ -345,7 +341,9 @@ main {
     width: 380px;
     height: 360px;
   }
-
+.introduce{
+  margin-top: 2rem;
+}
   .introduce .hello {
     font-size: 6rem;
   }
