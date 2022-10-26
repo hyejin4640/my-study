@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-repeat: no-repeat;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      width: 60%;
+      border: 2px solid #000;
+      border-radius: 25px;
+      padding: 1rem;
+      box-shadow: 5px 10px 1px #000;
+      background-color: orange;
+    }
+
+    .h1 {
+      border-bottom: 2px solid #000;
+
+    }
+
+    .h1 .dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #000;
+      display: inline-block;
+    }
+
+    .h1-text {
+      display: inline-block;
+      margin-left: 35%;
+      font-size: 24px;
+    }
+
+    .contents {
+      display: flex;
+
+    }
+
+    .contents>div {
+      width: 50%;
+    }
+
+    video {
+      width: 80%;
+      height: 50vh;
+      object-fit: fill;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    .right h2 {
+      font-size: 40px;
+    }
+
+    .video-text {
+      width: 80%;
+      border: 1px solid #000;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="h1">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="h1-text">webproject</div>
+    </h1>
+
+    <div class="contents">
+      <div class="left">
+        <video src="./윈도우10 화면 녹화 기능 사용법 - Chrome 2022-10-16 13-28-56.mp4"></video>
+        <div class="video-text">
+          <span></span>
+          <span>></span>
+        </div>
+      </div>
+      <div class="right">
+        <h2>Apple wbsite</h2>
+        <div class="right-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+          Repellendus quis est nam accusamus, deleniti placea
+        </div>
+        <button type="button">site 이동</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
