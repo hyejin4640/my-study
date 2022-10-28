@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React first</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+
+      let counter = 0;
+      const countUp = () => {
+        counter++;
+        root.render(wrap);
+      };
+
+
+      const span = React.createElement(
+        "span",
+        {
+          id: "span1",
+          style: { color: "red", backgroundColor: "yellow", fontSize: "50px" },
+        },
+        "Total Count : "
+      );
+
+      const btn = React.createElement(
+        "button",
+        {
+          id: "btn1",
+          style: { color: "blue", fontSize: "50px" },
+          onClick : countUp,
+        },
+        "click"
+      );
+      const wrap = React.createElement("div", null, [span, btn]);
+      const container = document.getElementById("root");
+      // 리액트사용시 html문서에 모든요소를 포함하는요소의 id
+      const root = ReactDOM.createRoot(container);
+      // 돔구조를 새로 생성
+      root.render(wrap);
+      // 생성한돔구조에 render함.
+
+      /* 2개이상의 컴포넌트를 생성하려면 감싸는 태그를 만들어야함.*/
+    </script>
+  </body>
+</html>

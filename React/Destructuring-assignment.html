@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구조분해할당</title>
+</head>
+<body>
+  <script>
+
+    /* Array 분할 */
+  //   let arr = ['hong','gil-dong'];
+  //   console.log( arr );
+  //   let first = arr[0];
+  //   let last = arr[1];
+  //   console.log( first,"구조분해", last  );
+  //   let [f, l] = arr;
+  //   console.log( f ,"홍");
+  //   console.log( l ,"길동");
+  //   let [a,b] = "aaa bbb".split(' ');
+  //   console.log( a );
+  //   let [c,,e] = ['cc','dd','eee','d','e'];
+  //   console.log(c); //cc
+  //   console.log(e);  //eee
+  //   let [t,g,h] = "abcdefg";
+  //   console.log( t);   //a
+  //   console.log( g);   //b
+  //   console.log( h);    //c
+  //   /* 교환 알고리즘 */
+  //   [first,last] = [last,first]
+  // console.log( first,last);
+  // /* rest 나머지  */
+  //   let rest = ['a','b','ff','tr','yy']
+  //   let [one,two,...namugi] = rest;
+  //   console.log( one);
+  //   console.log( two);
+  //   console.log( namugi);
+    
+    /* Object 분할 */
+    let options ={
+      title : "옵션",
+      x : 100,
+      y : 200,
+    };
+
+    // let {title,x,y} = options;
+    // console.log( title , x,y );
+
+    // let {x,title,y} = options;
+    // console.log( title , x,y );
+
+    // let { title:t,x:width,y:height} = options;
+    // console.log( t , width , height);
+
+    // let {title} = options;
+    // console.log( title );
+
+    // let {title,...rest} = options;
+    // console.log( rest , typeof rest );
+    
+    // 변수선언없이 ()로 대신하기
+    // ({title,x,y} = options)
+    // console.log(title,x,y );
+  
+    let op = {
+      pos:{
+        x:100,
+        y:200
+      },
+      items : ['xpos','ypos'],
+      flag : true,
+    }
+
+    // let { pos:{x,y},items:[item1,item2],flag : temp} = op;
+    // console.log(x);
+    // console.log(y);
+    // console.log(item1);
+    // console.log(item2);
+    // console.log(temp);
+
+    /* ":" -> 닉네임사용 , default는 값이없다면 defalt로 넣어준다. */
+    // let { flag : strName = "default", ...rest} = op;
+    // console.log( strName );
+    // console.log( rest );
+    
+    // const showOptions = ({items,flag:value})=>{
+    //   console.log( items);
+    //   console.log( value );
+    // } 
+    // showOptions(op);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>바닐라 js</title>
+</head>
+<body>
+  
+  <span>Total count : 0</span>
+  <button>click</button>
+  
+  <script>
+    let counter =0;
+    const tagBtn = document.querySelector('button');
+    const tagSpan = document.querySelector('span');
+
+    const handlerClick = ()=>{
+      console.log('click');
+      counter++;
+      tagSpan.textContent = `Total count : ${counter}`;
+    }
+    tagBtn.addEventListener('click',handlerClick );
+  </script>
+</body>
+</html>
