@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+#wrap > #card, #input {
+  margin: 0 auto;
+}
+
+#wrap > #card {
+  width: 700px;
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#wrap > #input {
+  text-align: center;
+  margin: 10px;
+}
+
+#wrap > #input > input {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  font-size: 64px;
+}
+
+#wrap > .start, .result {
+  width:100px;
+  height: 30px;
+}
+
+#wrap > #card > button > p {
+  width: 100%;
+  height: 100%;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}

@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* header ************************************* */
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #263343;
+}
+
+html {
+  font-size: 10px;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  z-index: 10;
+  color: #FFF;
+}
+
+.navbar_logo {
+  font-size: 4rem;
+}
+
+.navbar_menu {
+  display: flex;
+  padding-left: 0;
+  font-size: 2.5rem;
+}
+
+.navbar_menu li {
+  padding: 0.8rem 1.2rem;
+}
+
+.navbar_menu li:hover {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: crimson;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 0.5rem;
+}
+
+.navbar_icons {
+  display: flex;
+  font-size: 2.5rem;
+}
+
+.navbar_icons li {
+  padding: 0.8rem 1.2rem;
+}
+
+.navbar_toogleBtn {
+  display: none;
+  position: absolute;
+  right: 3.2rem;
+  font-size: 2.4rem;
+}
+
+/*  headerslide */
+.headerBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+
+}
+.hd-slide-contain{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hd-slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500vw;
+  height: 100%;
+  display: flex;
+}
+.hd-slide img{
+  width: 100vw;
+  height: 100%;
+}
+.headerBg video {
+  width: 100vw;
+  height: 100%;
+  object-fit: fill;
+}
+.slide-btn{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFF;
+  font-size: 12rem;
+}
+.slide-btn  > *{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-btn .prev {
+  left: 20rem;
+  
+}
+.slide-btn .next{
+right: 20rem;
+}
+.slide-dots{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slide-dots .dot{
+  width: 30px;
+  height: 30px;
+  color: #FFF;
+}
+/*  main  *****/
+main {
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 1.2rem;
+    background-color: grey;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar_toogleBtn {
+    display: block;
+  }
+
+  .toogle-open {
+    display: flex;
+  }
+}
