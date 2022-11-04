@@ -1,0 +1,8 @@
+web1.0 - > web start (서버)
+web2.0 -> ajax, 웹표준(클라이언트~) : 블로그
+web3.0 -> 시맨틱 웹(빅 데이터) : ai추천사이트등등 ai추천 쇼핑
+SEO -> 검색 엔진 최적화
+  - 시맨틱 태그 사용
+  - <title> 사용
+  - <meta name="description">
+
