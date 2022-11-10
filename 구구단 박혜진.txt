@@ -1,0 +1,36 @@
+
+from tkinter import *
+from functools import partial
+
+#창생성
+win = Tk()          #창생성 ,Tk는 라이브러리에서 사용하는 class 이다
+win.geometry("500x600")      #창크키
+display = StringVar()
+
+# stingVar == 변수에 값이 변할때마다 label,entry 등등 화면에 바로 바로 보여지게함
+# 변수에 저장된 값을 불러오고 싶을 때는 get()함수를 사용하며, 
+# 값을 설정하고 싶을 때는 set()함수를 사용하고 나머지 연산은 파이썬 기본 연산과 동일하다. 
+
+
+def find_G():
+    user = int(show.get())
+    print(user)
+    for i in range(1,10):
+        display.set(display.get() +f'{user}*{i}={user*i} \n' )
+
+
+
+label_1= Label(win)
+label_1.config(text="", border=5,relief="ridge",font=("",18,""),textvariable=display)
+label_1.place(x=10,y=5,width=400,height=300)
+
+show = Entry(win)
+show.config( border=5,relief="ridge",font=("",18,""))
+show.place(x=5,y=350)
+
+button = Button(win)
+button.config(border=5,relief="ridge",font=("",18,""),text="찾기",command=find_G)
+button.place(x=5,y=400)
+
+# 실행
+win.mainloop()    

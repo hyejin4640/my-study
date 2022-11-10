@@ -1,0 +1,107 @@
+package com.example.card_game;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+
+    ImageButton ibtn[] =new ImageButton[16];     //배열선언과 배열안의공간 자릿수지정 0-15
+    Button btnstart;
+    int num[] = new int[16];
+    Random rnd = new Random();
+    Handler h = new Handler();
+
+    int count , firstnum;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnstart = (Button) findViewById(R.id.btnstart);
+        btnstart.setOnClickListener(mStart);
+        for(int i=0; i<16; i++){
+            ibtn[i] = (ImageButton) findViewById(R.id.ibtn001 + i);
+            ibtn[i].setOnClickListener(mclick);
+        }
+    }
+
+    View.OnClickListener mStart = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+        count =0;
+        for( int i=0; i<8; i++){
+            num[i] = i;
+            num[i + 8] = i;
+        };
+        for(int i=0; i<100; i++){
+            int a = rnd.nextInt(16);
+            int b = rnd.nextInt(16);
+            int temp = num[a];
+            num[a] = num[b];
+            num[b] = temp;
+
+        }
+        for(int i=0; i<16; i++){
+            // num배열안에 뒤죽박죽으로들어간 숫자들을 이미지의 넘버링에 더해서 이미지를 셋팅한다
+//            ibtn[i].setBackgroundResource(R.drawable.img1+num[i]);
+            ibtn[i].setBackgroundResource(R.drawable.img0);
+            ibtn[i].setVisibility(View.VISIBLE);
+        }
+
+        };
+    };
+
+    View.OnClickListener mclick =new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            for (int i = 0; i < 16; i++) {
+                if (view.getId() == R.id.ibtn001 + i) {
+                    ibtn[i].setBackgroundResource(R.drawable.img1 + num[i]);
+                    if (count % 2 == 0) firstnum = i;
+                    // 2로나눈 나머지값이 0과같으면 firstnum에다가 i를 저장해라
+                    if (count % 2 == 1) {
+                        if (firstnum == i) return;
+                        // 같은 이미지버튼을 누른다면 이미지가 첫번째와 두번째가 같은지 검사하는 함수가 실행되지않도록
+                        // 즉 이미지버튼의 이미지가 그대로여야하니까 return한다.
+                        target(firstnum, i);
+                    }
+                }
+            }
+            count++;
+        }
+        };
+    // 버튼을 2개 클릭해서 첫번째와 두번재를 클릭하는 함수
+    public void target(int key,int i){
+        if (num[key] == num[i]){
+            h.postDelayed(new ht_handler(key,0),500);
+            h.postDelayed(new ht_handler(i,0),500);
+        }else{
+            h.postDelayed(new ht_handler(key,1),500);
+            h.postDelayed(new ht_handler(i,1),500);
+        }
+    }
+    class ht_handler implements Runnable{
+        int ht_number;
+        int no;
+        ht_handler(int ht_number, int no){
+            this.ht_number = ht_number;
+            this.no =no;
+        }
+    public void run(){
+            if(no == 0){
+                ibtn[ht_number].setVisibility(View.INVISIBLE);
+            }
+            if( no == 1){
+                ibtn[ht_number].setBackgroundResource(R.drawable.img0);
+            }
+    }
+    }
+    };
